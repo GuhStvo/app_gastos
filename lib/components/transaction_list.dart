@@ -1,3 +1,4 @@
+
 import 'package:app_gastos/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -10,23 +11,19 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // Criou essa lista de croaçaõ e convertel para map e colocou como linha "tr"
       children: transactions.map((tr) {
         return Card(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: 150,
                 margin: const EdgeInsets.symmetric(
                   horizontal: 15,
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
                   border: Border.all(
                     color: Colors.purple,
-                    width: 2.5,
+                    width: 2,
                   ),
                 ),
                 padding: const EdgeInsets.all(10),
@@ -39,10 +36,8 @@ class TransactionList extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     tr.title,
@@ -59,8 +54,6 @@ class TransactionList extends StatelessWidget {
                   ),
                 ],
               ),
-              )
-
             ],
           ),
         );
