@@ -1,23 +1,22 @@
-import 'package:app_gastos/models/transaction.dart';
 import 'package:flutter/material.dart';
 
-  // final titleController = TextEditingController();
-  // final valueController = TextEditingController();
+// final titleController = TextEditingController();
+// final valueController = TextEditingController();
 
-  // Função para submeter o formulário
+// Função para submeter o formulário
 class TransactionForm extends StatefulWidget {
   final void Function(String, double) onSubmit;
 
   // Construtor
-  const  TransactionForm(this.onSubmit, {Key? key}) : super(key: key);
+  const TransactionForm(this.onSubmit, {Key? key}) : super(key: key);
 
   @override
-  State <TransactionForm>createState() => _TransactionFormState();
-  }
+  State<TransactionForm> createState() => _TransactionFormState();
+}
 
-  class _TransactionFormState extends State<TransactionForm> {
-    final titleController = TextEditingController();
-    final valueController = TextEditingController();
+class _TransactionFormState extends State<TransactionForm> {
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
 
   // Função que será chamada ao submeter o formulário
   _submitForm() {
@@ -28,7 +27,7 @@ class TransactionForm extends StatefulWidget {
       return;
     }
 
-    Widget.onSubmit(title, value);
+    widget.onSubmit(title, value);
   }
 
   @override
